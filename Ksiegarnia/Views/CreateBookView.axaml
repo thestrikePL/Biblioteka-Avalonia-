@@ -1,0 +1,61 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Ksiegarnia.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:CreateBookViewModel"
+             x:Class="Ksiegarnia.Views.CreateBookView" Background="#303030" Foreground="White">
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+
+		<!-- Nagłówek -->
+		<Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="#444444" Padding="10">
+			<TextBlock HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Text="Stwórz nową książkę"
+                       Foreground="#FF4081" />
+			<!-- Czerwony tekst -->
+		</Border>
+
+		<!-- Kategoria -->
+		<StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,10">
+			<Label VerticalAlignment="Center" Content="Kategoria:" Foreground="White" />
+			<ComboBox ItemsSource="{Binding CategoryList}" SelectedValue="{Binding BookCategory}"
+                      Margin="10,0,0,0" Width="200" Foreground="#FF4081" />
+			<!-- Czerwony tekst -->
+		</StackPanel>
+
+		<!-- Tytuł książki -->
+		<StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,10">
+			<Label VerticalAlignment="Center" Content="Tytuł:" Foreground="White" />
+			<TextBox Text="{Binding BookTitle}" Margin="10,0,0,0" Width="300"
+                     Background="#ffffff" BorderBrush="#cccccc" BorderThickness="1" Foreground="#FF4081" />
+			<!-- Czerwony tekst -->
+		</StackPanel>
+
+		<!-- Autor książki -->
+		<StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,10">
+			<Label VerticalAlignment="Center" Content="Autor:" Foreground="White" />
+			<TextBox Text="{Binding BookAuthor}" Margin="10,0,0,0" Width="300"
+                     Background="#ffffff" BorderBrush="#cccccc" BorderThickness="1" Foreground="#FF4081" />
+			<!-- Czerwony tekst -->
+		</StackPanel>
+
+		<!-- Przyciski -->
+		<StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20">
+			<Button Margin="10" Content="Powrót" Width="100" Padding="10" Background="#FF4081" Foreground="White"
+                    Command="{Binding BackCommand}" HorizontalContentAlignment="Center" BorderThickness="0"/>
+			<Button Margin="10" Content="Stwórz książkę" Width="120" Padding="10" Background="#FF4081" Foreground="White"
+                    Command="{Binding CreateBookCommand}" HorizontalContentAlignment="Center" BorderThickness="0"/>
+		</StackPanel>
+	</Grid>
+</UserControl>

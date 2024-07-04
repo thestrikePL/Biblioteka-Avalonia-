@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Ksiegarnia.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:LoginViewModel"
+             x:Class="Ksiegarnia.Views.LoginView" Background="#f0f0f0" Foreground="#333333">
+	<Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<!-- Tytuł -->
+		<Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" BorderBrush="#333333" BorderThickness="2" CornerRadius="5" Margin="0,0,0,20">
+			<TextBlock Text="Logowanie"
+					   HorizontalAlignment="Center" VerticalAlignment="Center"
+					   FontSize="48" Padding="10"/>
+		</Border>
+
+		<!-- Pole Nazwa użytkownika -->
+		<Label Grid.Column="0" Grid.Row="1" Content="Nazwa użytkownika:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10"/>
+		<TextBox Grid.Column="1" Grid.Row="1" Margin="10" Text="{Binding Username}" Background="#000000" Foreground="#ffffff" BorderBrush="#cccccc" Grid.ColumnSpan="2" />
+
+		<!-- Pole Hasło -->
+		<Label Grid.Column="0" Grid.Row="2" Content="Hasło:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10"/>
+		<TextBox Grid.Column="1" Grid.Row="2" Margin="10" Text="{Binding Password}" Background="#000000" Foreground="#ffffff" BorderBrush="#cccccc" Grid.ColumnSpan="2" />
+
+		<!-- Przycisk Zaloguj -->
+		<Button Grid.Column="1" Grid.Row="3" Margin="10" Content="Zaloguj" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding LoginCommand}" Background="#e53935" Foreground="White" Padding="10" FontSize="16" BorderBrush="#c62828" BorderThickness="2" CornerRadius="5"/>
+
+		<!-- Przycisk Rejestracja -->
+		<Button Grid.Column="2" Grid.Row="3" Margin="10" Content="Rejestracja" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding RegisterCommand}" Background="#e53935" Foreground="White" Padding="10" FontSize="16" BorderBrush="#c62828" BorderThickness="2" CornerRadius="5"/>
+
+		<!-- Komunikat o błędzie -->
+		<TextBlock Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Text="{Binding ErrorMessage}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#e53935" Margin="10"/>
+	</Grid>
+</UserControl>

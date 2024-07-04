@@ -1,0 +1,58 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Ksiegarnia.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:CheckoutViewModel"
+             x:Class="Ksiegarnia.Views.CheckoutView">
+	<Grid Background="#303030">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+
+		<!-- Nagłówek -->
+		<Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="#444444" Padding="10" Margin="10">
+			<TextBlock Text="Wypożyczenia" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"
+                       Foreground="#E11D48" FontWeight="Bold"/>
+			<!-- Czerwony tekst -->
+		</Border>
+
+		<!-- Lista wypożyczeń -->
+		<ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Checkouts}" SelectedItem="{Binding SelectedCheckout}" MaxHeight="400"
+                 Background="#606060" BorderBrush="#202020" BorderThickness="1" Margin="10">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Margin="5">
+						<TextBlock Text="{Binding Book.Title}" FontWeight="Bold" Foreground="White"/>
+						<TextBlock Text="{Binding LastName}" Foreground="#CCCCCC"/>
+						<TextBlock Text="{Binding Phone}" Foreground="#CCCCCC"/>
+						<TextBlock Text="{Binding From, StringFormat='Od: {0:dd/MM/yyyy}'}" Foreground="#CCCCCC"/>
+						<TextBlock Text="{Binding To, StringFormat='Do: {0:dd/MM/yyyy}'}" Foreground="#CCCCCC"/>
+						<TextBlock Text="{Binding CreatedDate, StringFormat='Utworzono: {0:dd/MM/yyyy}'}" Foreground="#999999"/>
+						<TextBlock Text="{Binding ModifiedDate, StringFormat='Zmodyfikowano: {0:dd/MM/yyyy}'}" Foreground="#999999"/>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+
+		<!-- Panel kontrolny -->
+		<StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
+			<Button Content="Dodaj" Command="{Binding CreateCommand}" Background="#E11D48" Foreground="White" Margin="5"/>
+			<Button Content="Aktualizuj" Command="{Binding UpdateCommand}" Background="#E11D48" Foreground="White" Margin="5"/>
+			<Button Content="Usuń" Command="{Binding RemoveCommand}" Background="#E11D48" Foreground="White" Margin="5"/>
+		</StackPanel>
+
+		<!-- Przycisk "Powrót" -->
+		<Button Grid.Row="2" Grid.Column="2" Content="Powrót" Command="{Binding BackCommand}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10"
+                Background="#E11D48" Foreground="White"/>
+		<!-- Czerwony przycisk -->
+	</Grid>
+</UserControl>

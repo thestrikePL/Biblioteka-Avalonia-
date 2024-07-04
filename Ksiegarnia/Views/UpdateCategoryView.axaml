@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Ksiegarnia.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:UpdateCategoryViewModel"
+             x:Class="Ksiegarnia.Views.UpdateCategoryView"
+             Background="#303030" Foreground="White">
+
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+
+		<!-- Nagłówek -->
+		<TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="0,0,0,20" Text="Aktualizacja Kategorii" Foreground="#FF4081" />
+
+		<!-- Label i TextBox dla nazwy kategorii -->
+		<Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Nazwa:" />
+		<TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="20" Text="{Binding CategoryName}" />
+
+		<!-- Przyciski -->
+		<StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20">
+			<Button Margin="10" Content="Powrót" Width="100" Padding="10" Background="#FF4081" Foreground="White" Command="{Binding BackCommand}" HorizontalContentAlignment="Center" />
+			<Button Margin="10" Content="Zapisz" Width="100" Padding="10" Background="#FF4081" Foreground="White" Command="{Binding UpdateCategoryCommand}" HorizontalContentAlignment="Center" />
+		</StackPanel>
+	</Grid>
+</UserControl>
