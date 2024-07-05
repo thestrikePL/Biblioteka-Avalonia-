@@ -6,7 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:DataType="vm:CategoryViewModel"
              x:Class="Ksiegarnia.Views.CategoryView">
-	<Grid Background="#303030">
+	<Grid Background="#ffffff">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>

@@ -5,7 +5,7 @@
              xmlns:vm="using:Ksiegarnia.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:DataType="vm:CreateCategoryViewModel"
-             x:Class="Ksiegarnia.Views.CreateCategoryView" Background="#303030" Foreground="White">
+             x:Class="Ksiegarnia.Views.CreateCategoryView" Background="#ffffff" Foreground="White">
 	<Grid Margin="20">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
@@ -27,7 +27,7 @@
 
 		<!-- Pole na środku -->
 		<StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20">
-			<Label VerticalAlignment="Center" Content="Nazwa:" Foreground="White" />
+			<Label VerticalAlignment="Center" Content="Nazwa:" Foreground="black" />
 			<TextBox Text="{Binding CategoryName}" Margin="10" Width="300"
                      Background="#ffffff" BorderBrush="#cccccc" BorderThickness="1" Foreground="#FF4081" />
 			<!-- Czerwony tekst -->

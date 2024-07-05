@@ -5,7 +5,7 @@
              xmlns:vm="using:Ksiegarnia.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:DataType="vm:CreateBookViewModel"
-             x:Class="Ksiegarnia.Views.CreateBookView" Background="#303030" Foreground="White">
+             x:Class="Ksiegarnia.Views.CreateBookView" Background="#ffffff" Foreground="White">
 	<Grid Margin="20">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
@@ -28,7 +28,7 @@
 
 		<!-- Kategoria -->
 		<StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,10">
-			<Label VerticalAlignment="Center" Content="Kategoria:" Foreground="White" />
+			<Label VerticalAlignment="Center" Content="Kategoria:" Foreground="black" />
 			<ComboBox ItemsSource="{Binding CategoryList}" SelectedValue="{Binding BookCategory}"
                       Margin="10,0,0,0" Width="200" Foreground="#FF4081" />
 			<!-- Czerwony tekst -->
@@ -36,7 +36,7 @@
 
 		<!-- Tytuł książki -->
 		<StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,10">
-			<Label VerticalAlignment="Center" Content="Tytuł:" Foreground="White" />
+			<Label VerticalAlignment="Center" Content="Tytuł:" Foreground="black" />
 			<TextBox Text="{Binding BookTitle}" Margin="10,0,0,0" Width="300"
                      Background="#ffffff" BorderBrush="#cccccc" BorderThickness="1" Foreground="#FF4081" />
 			<!-- Czerwony tekst -->
@@ -44,7 +44,7 @@
 
 		<!-- Autor książki -->
 		<StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,10">
-			<Label VerticalAlignment="Center" Content="Autor:" Foreground="White" />
+			<Label VerticalAlignment="Center" Content="Autor:" Foreground="black" />
 			<TextBox Text="{Binding BookAuthor}" Margin="10,0,0,0" Width="300"
                      Background="#ffffff" BorderBrush="#cccccc" BorderThickness="1" Foreground="#FF4081" />
 			<!-- Czerwony tekst -->
